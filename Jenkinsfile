@@ -4,52 +4,38 @@ pipeline {
     label 'Slave_Induccion'
   }
 
-  //Opciones específicas de Pipeline dentro del Pipeline
+  //Opciones especÃ­ficas de Pipeline dentro del Pipeline
   options {
     	buildDiscarder(logRotator(numToKeepStr: '3'))
  	disableConcurrentBuilds()
   }
 
-  //Una sección que define las herramientas “preinstaladas” en Jenkins
+  //Una secciÃ³n que define las herramientas â€œpreinstaladasâ€ en Jenkins
   tools {
-    jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
-    gradle 'Gradle5.6_Centos' //Preinstalada en la Configuración del Master
+    jdk 'JDK8_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
+    gradle 'Gradle5.6_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
   }
 
-  //Aquí comienzan los “items” del Pipeline
+  //AquÃ­ comienzan los â€œitemsâ€ del Pipeline
   stages{
-		stage('Checkout'){
-						steps{
-						echo "------------>Checkout<------------"
-						checkout([
-						$class: 'GitSCM', 
-						branches: [[name: '*/master'],[[name: '*/develop']], 
-						doGenerateSubmoduleConfigurations: false, 
-						extensions: [], 
-						gitTool: 'Git_Centos', 
-						submoduleCfg: [], 
-						userRemoteConfigs: [[
-						credentialsId: 'giojimen3z', 
-						url:'https://github.com/giojimen3z/ADNCEIBA.git'
-					]]
-				])
-			}
-		}
-
+    stage('Checkout') {
+      steps{
+        echo "------------>Checkout<------------"
+      }
     }
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-		sh 'gradle --b ./build.gradle test'
+
       }
     }
 
     stage('Static Code Analysis') {
       steps{
-        echo '------------>Análisis de código estático<------------'
+        echo '------------>AnÃ¡lisis de cÃ³digo estÃ¡tico<------------'
         withSonarQubeEnv('Sonar') {
-sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+//sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
       }
     }
@@ -60,7 +46,8 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
       }
     }  
   }
-	post {
+
+  post {
     always {
       echo 'This will always run'
     }
@@ -79,4 +66,3 @@ sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallat
     }
   }
 }
-	
