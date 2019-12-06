@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'Parking'
-enableFeaturePreview('IMPROVED_POM_SUPPORT')
+//enableFeaturePreview('IMPROVED_POM_SUPPORT')
