@@ -56,7 +56,7 @@ pipeline {
             }
           }
     
-    }
+    
 
     stage('Static Code Analysis') {
       steps{
@@ -66,6 +66,7 @@ pipeline {
         }
       }
     }
+  }
 
   
   }
