@@ -50,7 +50,9 @@ pipeline {
         echo "------------>Unit Tests<------------"
           
         dir("Parking"){
+        sh 'cd backent/'
         sh 'gradle test'
+
         }
               //sh 'gradle --b ./build.gradle test'
             }
