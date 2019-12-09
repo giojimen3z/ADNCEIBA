@@ -39,7 +39,7 @@ pipeline {
       steps {
         //Construir sin tarea test que se ejecutó previamente
 
-            dir("Parking"){
+            dir("backent"){
                 sh 'gradle build -x test'
         }
       }
@@ -49,8 +49,7 @@ pipeline {
       steps {
         echo "------------>Unit Tests<------------"
           
-        dir("Parking"){
-        sh 'cd backent/'
+        dir("backent"){
         sh 'gradle test'
 
         }
