@@ -16,7 +16,12 @@ plugins {
     id 'org.springframework.boot' version '2.0.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'    
 
+	id 'jacoco'
+	id "org.sonarqube" version "2.7"
+	
 }
+
+apply plugin: 'jacoco'
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -54,4 +59,15 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClassName = 'com.Parking.App'
+}
+
+sonarqube {
+	properties {
+		property "sonar.sources", "src/main/java"
+		property "sonar.java.binaries", "build/classes/java/main"
+		property "sonar.tests", "src/test/java"
+		property "sonar.test.binaries", "build/classes/java/test"
+		property "sonar.jacoco.reportPaths", "build/jacoco/test.exec"
+		property "sonar.junit.reportPaths", "build/test-results/test"
+	}
 }
