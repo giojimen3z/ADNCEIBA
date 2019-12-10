@@ -35,15 +35,6 @@ pipeline {
         ])        
       }
     }
-    stage('Build') {
-      steps {
-        //Construir sin tarea test que se ejecutó previamente
-
-            dir("backent"){
-                sh 'gradle build -x test'
-        }
-      }
-    }
 
     stage('Tests') {
       steps {
@@ -56,8 +47,6 @@ pipeline {
               //sh 'gradle --b ./build.gradle test'
             }
           }
-    
-    
 
     stage('Static Code Analysis') {       
 			steps{
@@ -66,7 +55,19 @@ pipeline {
 					sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
 				}
 			}
-		}
+		}    
+    stage('Build') {
+      steps {
+        //Construir sin tarea test que se ejecutó previamente
+
+            dir("backent"){
+                sh 'gradle build -x test'
+        }
+      }
+    }
+
+    
+
   }
 
   
