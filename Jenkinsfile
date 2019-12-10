@@ -35,15 +35,7 @@ pipeline {
         ])        
       }
     }
-    stage('Build') {
-      steps {
-        //Construir sin tarea test que se ejecutó previamente
 
-            dir("backent"){
-                sh 'gradle build -x test'
-        }
-      }
-    }
 
     stage('Tests') {
       steps {
@@ -67,6 +59,16 @@ pipeline {
 				}
 			}
 		}
+    stage('Build') {
+      steps {
+        //Construir sin tarea test que se ejecutó previamente
+
+            dir("backent"){
+                sh 'gradle build -x test'
+        }
+      }
+    }
+
   }
 
   
