@@ -18,78 +18,78 @@ pipeline {
 
   //Aquí comienzan los “items” del Pipeline
   stages{
-    stage('Checkout') {
-      steps{
-        echo "------------>Checkout<------------"
-        checkout([
-          $class: 'GitSCM',
-          branches: [[name: '*/master']],
-          doGenerateSubmoduleConfigurations: false,
-          extensions: [],
-          gitTool: 'Git_Centos',
-          submoduleCfg: [],
-          userRemoteConfigs: [[
-            credentialsId: 'GitHub_Giovanny.Jimenez',
-            url:'https://github.com/giojimen3z/ADNCEIBA.git'
-          ]]
-        ])        
-      }
-    }
-
-
-    stage('Tests') {
-      steps {
-        echo "------------>Unit Tests<------------"
-          
-        dir("backent"){
-        sh 'gradle test'
-
+        stage('Checkout') {
+          steps{
+            echo "------------>Checkout<------------"
+            checkout([
+              $class: 'GitSCM',
+              branches: [[name: '*/master']],
+              doGenerateSubmoduleConfigurations: false,
+              extensions: [],
+              gitTool: 'Git_Centos',
+              submoduleCfg: [],
+              userRemoteConfigs: [[
+                credentialsId: 'GitHub_Giovanny.Jimenez',
+                url:'https://github.com/giojimen3z/ADNCEIBA.git'
+              ]]
+            ])        
+          }
         }
-              //sh 'gradle --b ./build.gradle test'
+
+
+        stage('Tests') {
+          steps {
+            echo "------------>Unit Tests<------------"
+              
+            dir("backent"){
+            sh 'gradle test'
+
+            }
+                  //sh 'gradle --b ./build.gradle test'
+          }
+        
+        
+
+        stage('Static Code Analysis') {       
+          steps{
+            echo '------------>Análisis de código estático<------------'         
+            withSonarQubeEnv('Sonar') { 
+              sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
             }
           }
-    
-    
-
-    stage('Static Code Analysis') {       
-			steps{
-				echo '------------>Análisis de código estático<------------'         
-				withSonarQubeEnv('Sonar') { 
-					sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
-				}
-			}
-		}
-    stage('Build') {
-      steps {
-        //Construir sin tarea test que se ejecutó previamente
-
-            dir("backent"){
-                sh 'gradle build -x test'
         }
-      }
-    }
+        stage('Build') {
+          steps {
+            //Construir sin tarea test que se ejecutó previamente
 
-  }
+                dir("backent"){
+                    sh 'gradle build -x test'
+            }
+          }
+        }
 
-  
   }
 
   post {
-    always {
-      echo 'This will always run'
-    }
 
-    failure {
-      echo 'This will run only if failed'
-      mail (to: 'jaime.jimenez@ceiba.com.co', subject: "Failed Pipeline:${currentBuild.fullDisplayName}",
-            body: "Something is wrong with ${env.BUILD_URL}")
-    }
-    unstable {
-      echo 'This will run only if the run was marked as unstable'
-    }
-    changed {
-      echo 'This will run only if the state of the Pipeline has changed'
-      echo 'For example, if the Pipeline was previously failing but is now successful'
-    }
+      always {
+        echo 'This will always run'
+      }
+
+      failure {
+        echo 'This will run only if failed'
+        mail (to: 'jaime.jimenez@ceiba.com.co', subject: "Failed Pipeline:${currentBuild.fullDisplayName}",
+              body: "Something is wrong with ${env.BUILD_URL}")
+      }
+      unstable {
+        echo 'This will run only if the run was marked as unstable'
+      }
+      changed {
+        echo 'This will run only if the state of the Pipeline has changed'
+        echo 'For example, if the Pipeline was previously failing but is now successful'
+      }
 
   }
+  
+  }
+
