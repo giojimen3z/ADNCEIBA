@@ -13,8 +13,8 @@ plugins {
     id 'application'
     //Spring boot
 
-    id 'org.springframework.boot' version '2.0.5.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.7.RELEASE'    
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 
 	id 'jacoco'
 	id "org.sonarqube" version "2.7"
@@ -37,11 +37,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     
     //Spring boot
-        implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
-        implementation 'org.springframework.boot:spring-boot-starter-web'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	//mysql 
+		runtimeOnly 'mysql:mysql-connector-java'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+	
         components {
             withModule('org.springframework:spring-beans') {
                 allVariants {
@@ -53,7 +60,8 @@ dependencies {
             }
         }    
 
-
+	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 
 }
 application {
