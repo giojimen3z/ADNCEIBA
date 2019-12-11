@@ -12,5 +12,5 @@ public interface VehiclesRepository  extends Repository<Vehicles, Integer> {
 	Vehicles save(Vehicles vehicle);
 	void delete (Vehicles vehicle);
 	
-
+ 
 }
