@@ -1,4 +1,4 @@
-package infraestructura;
+package infrastructure.controller;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import aplication.handler.VehicleHandler;
+import infrastructure.repository.entity.VehiclesJpa;
+
 
 @CrossOrigin(origins = "http://localhost:4200" ,maxAge=3600)
 @RestController
@@ -15,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class VehiclesController {
 	
 	@Autowired
-	VehiclesService service;
+	VehicleHandler handler;
 	
 	@GetMapping
-	public List<Vehicles> showVehicles(){
-		
-		return service.showVehicles();
+	public List<VehiclesJpa> showVehicles(){
+		 
+		return handler.showVehicles();
 		
 	}
 }
