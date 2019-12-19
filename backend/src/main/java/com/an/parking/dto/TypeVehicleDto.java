@@ -1,23 +1,17 @@
 package com.an.parking.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TypeVehicleDto {
 
+    private Long id;
     private String cc;
     private boolean meanTransportation;
 
-    public String getCc() {
-        return cc;
-    }
 
-    public void setCc(String cc) {
-        this.cc = cc;
-    }
-
-    public boolean isMeanTransportation() {
-        return meanTransportation;
-    }
-
-    public void setMeanTransportation(boolean meanTransportation) {
-        this.meanTransportation = meanTransportation;
-    }
 }

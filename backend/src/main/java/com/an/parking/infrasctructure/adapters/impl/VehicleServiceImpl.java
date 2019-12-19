@@ -16,7 +16,7 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleEntity get(Long id) {
-        return null;
+        return iVehicleRepository.getOne(id);
     }
 
     @Override
@@ -25,12 +25,12 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
-    public boolean save(VehicleEntity vehicleDto) {
-        return false;
+    public VehicleEntity save(VehicleEntity vehicleEntity) {
+        return iVehicleRepository.save(vehicleEntity);
     }
 
     @Override
-    public boolean update(Long id, VehicleEntity vehicleDto) {
-        return false;
+    public VehicleEntity update(Long id, VehicleEntity vehicleDto) {
+        return null;
     }
 }

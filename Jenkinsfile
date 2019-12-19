@@ -39,7 +39,7 @@ pipeline {
         stage('Tests') {
             steps {
                 echo "------------>Unit Tests<------------"
-                dir("backent"){
+                dir("backend"){
                     sh 'gradle test'
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
 
         stage('Build') {
         steps {
-                dir("backent"){
+                dir("backend"){
                     sh 'gradle build -x test'
                 }
             }

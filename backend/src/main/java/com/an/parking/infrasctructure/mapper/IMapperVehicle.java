@@ -8,5 +8,5 @@ import org.mapstruct.ReportingPolicy;
 
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = "spring", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
-public interface IMapperVehicle extends IMapperGeneric<VehicleDto, VehicleEntity> {
+public interface IMapperVehicle extends IMapperGeneric< VehicleEntity,VehicleDto> {
 }

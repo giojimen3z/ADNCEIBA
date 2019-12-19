@@ -10,8 +10,8 @@ public interface IVehicleService {
 
     List<VehicleEntity> getAll();
 
-    boolean save(VehicleEntity vehicleDto);
+    VehicleEntity save(VehicleEntity vehicleDto);
 
-    boolean update(Long id, VehicleEntity vehicleDto);
+    VehicleEntity update(Long id, VehicleEntity vehicleDto);
 
 }

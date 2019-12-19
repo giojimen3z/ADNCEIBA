@@ -11,7 +11,7 @@ public interface IVehicleDelegate {
 
     ResponseEntity<List<VehicleDto>> getAll();
 
-    ResponseEntity save(VehicleDto vehicleDto);
+    ResponseEntity<VehicleDto> save(VehicleDto vehicleDto);
 
     ResponseEntity update(Long id, VehicleDto vehicleDto);
 

@@ -24,7 +24,9 @@ public class VehicleImpl implements IVehicleDelegate {
 
     @Override
     public ResponseEntity<VehicleDto> get(Long id) {
-        return null;
+        // VehicleEntity vehicleEntity = this.iVehicleService.get(id);
+        //VehicleDto vehicleDto = iMapperVehicle.entityToDto(vehicleEntity);
+        return ResponseEntity.ok(this.iMapperVehicle.entityToDto(this.iVehicleService.get(id)));
     }
 
     @Override
@@ -33,12 +35,19 @@ public class VehicleImpl implements IVehicleDelegate {
 //        List<VehicleEntity> vehicleEntities = this.iVehicleService.getAll();
 //        List<VehicleDto> vehicleDtos = this.iMapperVehicle.dtoToEntity(vehicleEntities);
 //        return ResponseEntity.ok(vehicleDtos);
-        return ResponseEntity.ok(this.iMapperVehicle.dtoToEntity(this.iVehicleService.getAll()));
+        return ResponseEntity.ok(this.iMapperVehicle.entityToDto(this.iVehicleService.getAll()));
     }
 
     @Override
-    public ResponseEntity save(VehicleDto vehicleDto) {
-        return null;
+    public ResponseEntity<VehicleDto> save(VehicleDto vehicleDto) {
+
+        VehicleEntity vehicleEntity = this.iMapperVehicle.dtoToEntity(vehicleDto);
+        VehicleEntity _vehicleEntity = this.iVehicleService.save(vehicleEntity);
+        VehicleDto _vehicleDto = this.iMapperVehicle.entityToDto(_vehicleEntity);
+        return ResponseEntity.ok(_vehicleDto);
+
+
+        //   return ResponseEntity.ok(this.iMapperVehicle.entityToDto(vehicleEntity));
     }
 
     @Override

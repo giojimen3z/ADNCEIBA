@@ -1,10 +1,15 @@
 package com.an.parking.infrasctructure.repository.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Vehicle")
 public class VehicleEntity {
 
@@ -16,9 +21,10 @@ public class VehicleEntity {
     private String plate;
 
     @OneToOne
-    private TypeVehicleEntity typeVehicleDto;
-    @OneToOne
-    private BrandEntity brandEntity;
+    private TypeVehicleEntity typeVehicle;
+
+    @OneToOne(cascade = CascadeType.ALL , mappedBy = "")
+    private BrandEntity brand;
 
     public Long getId() {
         return id;
@@ -36,19 +42,19 @@ public class VehicleEntity {
         this.plate = plate;
     }
 
-    public TypeVehicleEntity getTypeVehicleDto() {
-        return typeVehicleDto;
+    public TypeVehicleEntity getTypeVehicle() {
+        return typeVehicle;
     }
 
-    public void setTypeVehicleDto(TypeVehicleEntity typeVehicleDto) {
-        this.typeVehicleDto = typeVehicleDto;
+    public void setTypeVehicle(TypeVehicleEntity typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 
-    public BrandEntity getBrandEntity() {
-        return brandEntity;
+    public BrandEntity getBrand() {
+        return brand;
     }
 
-    public void setBrandEntity(BrandEntity brandEntity) {
-        this.brandEntity = brandEntity;
+    public void setBrand(BrandEntity brand) {
+        this.brand = brand;
     }
 }
