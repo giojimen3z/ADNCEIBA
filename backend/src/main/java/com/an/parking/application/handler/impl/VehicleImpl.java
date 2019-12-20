@@ -1,10 +1,10 @@
 package com.an.parking.application.handler.impl;
 
 import com.an.parking.application.handler.IVehicleDelegate;
-import com.an.parking.dto.VehicleDto;
+import com.an.parking.dto.vehicle.VehicleDto;
 import com.an.parking.infrasctructure.adapters.IVehicleService;
 import com.an.parking.infrasctructure.mapper.IMapperVehicle;
-import com.an.parking.infrasctructure.repository.entity.VehicleEntity;
+import com.an.parking.infrasctructure.repository.entity.vehicle.VehicleEntity;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -31,7 +31,6 @@ public class VehicleImpl implements IVehicleDelegate {
 
     @Override
     public ResponseEntity<List<VehicleDto>> getAll() {
-        //HERE YOU SHOULD VALIDATE THE BUSINESS LOGIC
 //        List<VehicleEntity> vehicleEntities = this.iVehicleService.getAll();
 //        List<VehicleDto> vehicleDtos = this.iMapperVehicle.dtoToEntity(vehicleEntities);
 //        return ResponseEntity.ok(vehicleDtos);

@@ -1,21 +1,14 @@
-package com.an.parking.infrasctructure.repository.entity;
+package com.an.parking.dto.vehicle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-
-@Table(name = "brand")
-@Entity
-@NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class BrandEntity {
-    @Id
+@NoArgsConstructor
+public class Brand {
     private Long id;
     private String name;
     private String price;
-
-
 }

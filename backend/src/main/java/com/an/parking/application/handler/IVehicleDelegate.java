@@ -1,6 +1,6 @@
 package com.an.parking.application.handler;
 
-import com.an.parking.dto.VehicleDto;
+import com.an.parking.dto.vehicle.VehicleDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

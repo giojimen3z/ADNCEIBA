@@ -2,7 +2,7 @@ package com.an.parking.infrasctructure.controllers;
 
 
 import com.an.parking.application.handler.IVehicleDelegate;
-import com.an.parking.dto.VehicleDto;
+import com.an.parking.dto.vehicle.VehicleDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

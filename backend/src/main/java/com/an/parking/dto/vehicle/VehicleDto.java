@@ -1,4 +1,4 @@
-package com.an.parking.dto;
+package com.an.parking.dto.vehicle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,5 +12,6 @@ public class VehicleDto {
     private TypeVehicleDto typeVehicle;
     private String plate;
     private Brand brand;
+    private  Location location;
 
 }

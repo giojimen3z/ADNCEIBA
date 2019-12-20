@@ -1,4 +1,4 @@
-package com.an.parking.infrasctructure.repository.entity;
+package com.an.parking.infrasctructure.repository.entity.vehicle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

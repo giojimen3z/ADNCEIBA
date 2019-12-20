@@ -1,8 +1,8 @@
 package com.an.parking.infrasctructure.adapters.impl;
 
 import com.an.parking.infrasctructure.adapters.IVehicleService;
-import com.an.parking.infrasctructure.repository.entity.IVehicleRepository;
-import com.an.parking.infrasctructure.repository.entity.VehicleEntity;
+import com.an.parking.infrasctructure.repository.entity.vehicle.IVehicleRepository;
+import com.an.parking.infrasctructure.repository.entity.vehicle.VehicleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class VehicleServiceImpl implements IVehicleService {
     }
 
     @Override
-    public VehicleEntity update(Long id, VehicleEntity vehicleDto) {
-        return null;
+    public VehicleEntity update(VehicleEntity vehicleEntity) {
+        return iVehicleRepository.save(vehicleEntity);
     }
 }

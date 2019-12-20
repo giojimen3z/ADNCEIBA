@@ -1,6 +1,6 @@
 package com.an.parking.infrasctructure.adapters;
 
-import com.an.parking.infrasctructure.repository.entity.VehicleEntity;
+import com.an.parking.infrasctructure.repository.entity.vehicle.VehicleEntity;
 
 import java.util.List;
 
@@ -12,6 +12,6 @@ public interface IVehicleService {
 
     VehicleEntity save(VehicleEntity vehicleDto);
 
-    VehicleEntity update(Long id, VehicleEntity vehicleDto);
+    VehicleEntity update(VehicleEntity vehicleDto);
 
 }
