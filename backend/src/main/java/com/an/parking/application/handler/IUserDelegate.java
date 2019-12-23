@@ -16,4 +16,6 @@ public interface IUserDelegate {
     ResponseEntity<UserDto> save(UserDto UserDto);
 
     ResponseEntity update(Long id, UserDto UserDto);
+
+    //ResponseEntity post(String email,String pass);
 }

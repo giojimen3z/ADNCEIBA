@@ -2,7 +2,7 @@ package com.an.parking.application.handler.impl;
 
 import com.an.parking.application.handler.IVehicleDelegate;
 import com.an.parking.dto.vehicle.VehicleDto;
-import com.an.parking.infrasctructure.adapters.IVehicleService;
+import com.an.parking.dto.ports.IVehicleService;
 import com.an.parking.infrasctructure.mapper.IMapperVehicle;
 import com.an.parking.infrasctructure.repository.entity.vehicle.VehicleEntity;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -50,7 +50,7 @@ public class VehicleImpl implements IVehicleDelegate {
     }
 
     @Override
-    public ResponseEntity update(Long id, VehicleDto vehicleDto) {
+    public ResponseEntity update(VehicleDto vehicleDto) {
         return null;
     }
 }

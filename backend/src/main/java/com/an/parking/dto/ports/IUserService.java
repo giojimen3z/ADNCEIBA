@@ -1,4 +1,4 @@
-package com.an.parking.infrasctructure.adapters;
+package com.an.parking.dto.ports;
 
 
 
@@ -7,7 +7,7 @@ import com.an.parking.infrasctructure.repository.entity.user.UserEntity;
 import java.util.List;
 
 public interface IUserService {
-    UserEntity get(String email, String pass);
+    UserEntity get(Long id);
 
     List<UserEntity> getAll();
 

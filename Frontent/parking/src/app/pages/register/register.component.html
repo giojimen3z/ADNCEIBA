@@ -1,0 +1,38 @@
+<section>
+  <div class="full-page">
+    <mat-card class="login-card">
+        <mat-card-title>
+            REGISTRO
+        </mat-card-title>
+        <mat-card-content>
+            <mat-form-field class="login-field" >
+                <input matInput placeholder="Nombre" [(ngModel)]="Nombre"  type="text"/>
+            </mat-form-field>
+            <span id="name" class="error"></span>
+            <mat-form-field class="login-field">
+                <input matInput placeholder="Genero" [(ngModel)]="Genero" type="text"/>
+            </mat-form-field>
+            <span id="gender" class="error"></span>
+            <mat-form-field class="login-field">
+                <input matInput placeholder="Correo" [(ngModel)]="Correo" type="email"/>
+            </mat-form-field>
+            <span id="email" class="error"></span>
+            <mat-form-field class="login-field">
+                <input matInput placeholder="Usuario" [(ngModel)]="Usuario" type="text"/>
+            </mat-form-field>
+            <span id="user" class="error"></span>
+            <mat-form-field class="login-field">
+                <input matInput placeholder="Contraseña" [(ngModel)]="Password" type="password"/>
+            </mat-form-field>
+            <span id="password" class="error"></span>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" class="btn btn-outline-dark" (click)="register(Nombre, Genero, Correo, Usuario, Password)">CREAR</button>
+            <button type="button" class="btn btn-outline-dark" [routerLink]="['']">CANCELAR</button>
+        </mat-card-actions>
+    </mat-card>
+  </div>
+  <div>
+
+  </div>
+</section>

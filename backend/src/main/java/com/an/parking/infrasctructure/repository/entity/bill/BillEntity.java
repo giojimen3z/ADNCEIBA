@@ -16,6 +16,8 @@ public class BillEntity {
     private Long id;
     @OneToOne
     private TimeEntity time;
+    @OneToOne
+    private CostEntity cost;
 
 
 

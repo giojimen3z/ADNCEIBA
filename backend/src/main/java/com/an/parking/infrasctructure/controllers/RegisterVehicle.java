@@ -30,6 +30,11 @@ public class RegisterVehicle {
             return iVehicleDelegate.save(vehicleDto);
     }
 
+    @PutMapping()
+    public  ResponseEntity update( @RequestBody VehicleDto vehicleDto){
+
+        return iVehicleDelegate.update(vehicleDto);
+    }
 
 
 

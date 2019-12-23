@@ -11,6 +11,7 @@ public class BillDto {
 
     private Long id;
     private Time time;
+    private Cost cost;
 
 
 

@@ -1,0 +1,26 @@
+mat-sidenav-content {
+  height: 100vh;
+
+}
+
+mat-sidenav {
+  width: 20%;
+  background-color: black;
+  color: white;
+}
+
+mat-nav-list > a {
+  color: white;
+}
+
+.container-menu{
+  width: 95%;
+  margin: auto;
+}
+
+mat-nav-list > a:hover{
+  border-left: 2px solid white;
+  background-color: rgb(61, 60, 60);
+}
+
+

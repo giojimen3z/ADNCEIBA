@@ -1,6 +1,6 @@
 package com.an.parking.infrasctructure.adapters.impl;
 
-import com.an.parking.infrasctructure.adapters.IUserService;
+import com.an.parking.dto.ports.IUserService;
 import com.an.parking.infrasctructure.repository.entity.user.IUserRepository;
 import com.an.parking.infrasctructure.repository.entity.user.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,22 +16,25 @@ public class UserServiceImpl implements IUserService {
 
 
     @Override
-    public UserEntity get(String email, String pass) {
-        return null;
+    public UserEntity get(Long id) {
+        return iUserRepository.getOne(id);
     }
 
     @Override
     public List<UserEntity> getAll() {
-        return null;
+        return iUserRepository.findAll();
     }
 
     @Override
-    public UserEntity save(UserEntity userDto) {
-        return null;
+    public UserEntity save(UserEntity UserEntity) {
+        return iUserRepository.save(UserEntity);
     }
 
     @Override
-    public UserEntity update(UserEntity userDto) {
-        return null;
+    public UserEntity update(UserEntity UserEntity) {
+        return iUserRepository.save(UserEntity);
     }
+
+
+
 }

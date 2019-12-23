@@ -1,0 +1,17 @@
+.example-card{
+    width: 30%;
+}
+
+.btn-publicar{
+    background-color: #ff2828fa;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+}
+
+mat-card-actions{
+    display: flex;
+    justify-content: center;
+    height: 30px;    
+}

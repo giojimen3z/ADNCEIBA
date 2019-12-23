@@ -1,6 +1,6 @@
 package com.an.parking.infrasctructure.adapters.impl;
 
-import com.an.parking.infrasctructure.adapters.IBillService;
+import com.an.parking.dto.ports.IBillService;
 import com.an.parking.infrasctructure.repository.entity.bill.BillEntity;
 import com.an.parking.infrasctructure.repository.entity.bill.IBillRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -13,6 +13,6 @@ public interface IVehicleDelegate {
 
     ResponseEntity<VehicleDto> save(VehicleDto vehicleDto);
 
-    ResponseEntity update(Long id, VehicleDto vehicleDto);
+    ResponseEntity update(VehicleDto vehicleDto);
 
 }

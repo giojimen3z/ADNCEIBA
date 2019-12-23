@@ -1,6 +1,6 @@
 package com.an.parking.infrasctructure.adapters.impl;
 
-import com.an.parking.infrasctructure.adapters.IVehicleService;
+import com.an.parking.dto.ports.IVehicleService;
 import com.an.parking.infrasctructure.repository.entity.vehicle.IVehicleRepository;
 import com.an.parking.infrasctructure.repository.entity.vehicle.VehicleEntity;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.an.parking.infrasctructure.adapters;
+package com.an.parking.dto.ports;
 
 import com.an.parking.infrasctructure.repository.entity.bill.BillEntity;
 

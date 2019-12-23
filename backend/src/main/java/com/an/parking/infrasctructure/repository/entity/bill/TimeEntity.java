@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Calendar;
 import java.util.Date;
 
 @Table(name = "Time")
@@ -18,8 +19,8 @@ public class TimeEntity {
 
     @Id
     private Long id;
-    private Date startTime;
-    private Date endTime;
+    private Calendar startTime;
+    private Calendar endTime;
 
 
 }

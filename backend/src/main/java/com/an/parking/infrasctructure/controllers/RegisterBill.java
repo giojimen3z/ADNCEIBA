@@ -15,7 +15,7 @@ public class RegisterBill {
     @Autowired
     private IBillDelegate iBillDelegate;
 
-    @GetMapping("/billlist")
+    @GetMapping("/list")
     public ResponseEntity<List<BillDto>> getBill() {
         return iBillDelegate.getAll();
     }
