@@ -24,36 +24,36 @@ const routes: Routes = [{
         {
         path: '',
           loadChildren: () =>
-            import('./pages/products/products.module').then(
-              m => m.ProductsModule
+            import('./pages/addvehicle/addvehicle.module').then(
+              m => m.AddvehicleModule
             )
         },
         {
-        path: 'products',
+          path: 'Add',
           loadChildren: () =>
-            import('./pages/products/products.module').then(
-              m => m.ProductsModule
+            import('./pages/addvehicle/addvehicle.module').then(
+              m => m.AddvehicleModule
             )
         },
         {
-          path: 'page-one',
+        path: 'vehicles',
           loadChildren: () =>
-            import('./pages/page-one/page-one.module').then(
-              m => m.PageOneModule
+            import('./pages/vehiclelist/vehiclelist.module').then(
+              m => m.VehiclelistModule
             )
         },
         {
-          path: 'to-shell',
+          path: 'bill',
           loadChildren: () =>
-            import('./pages/market/market.module').then(
-              m => m.MarketModule
+            import('./pages/bill/bill.module').then(
+              m => m.BillModule
             )
         },
         {
-          path: 'my-products',
+          path: 'pay',
           loadChildren: () =>
-            import('./pages/myproducts/myproducts.module').then(
-              m => m.MyproductsModule
+            import('./pages/pay/pay.module').then(
+              m => m.PayModule
             )
         }
       ]
