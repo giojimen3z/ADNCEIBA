@@ -1,0 +1,57 @@
+.container-card{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 80% !important;
+  box-shadow: -1px 3px 15px black;
+}
+
+.card-body{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  flex-direction: column;
+}
+
+.card-body > div:nth-child(1){
+  width: 100%;
+  height: 300px;
+  background: url("./../../../assets/images/432916874parqueadero-tips-cy.jpg");
+}
+
+.card-body > div:nth-child(2){
+  width: 100%;
+  height: 40%;
+}
+
+.btn-save{
+  width: 50% !important;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card-header{
+  background-color: black;
+  color: white;
+}
+.labels{
+  width: 50%;
+  margin-left: 10%;
+  margin-bottom: 15px;
+}
+.titles{
+
+  margin-left: 70px;
+  font-weight: bold;
+}
+.hour{
+  font-weight: bold;
+  display: inline-block;
+
+}

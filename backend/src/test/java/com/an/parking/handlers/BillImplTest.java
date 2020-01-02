@@ -1,28 +1,23 @@
 package com.an.parking.handlers;
 
 
-import com.an.parking.application.handler.impl.BillImpl;
-import com.an.parking.dto.bill.BillDto;
-import com.an.parking.infrasctructure.adapters.impl.BillServiceImpl;
-import com.an.parking.infrasctructure.mapper.IMapperBill;
-import com.an.parking.infrasctructure.repository.entity.bill.BillEntity;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import com.an.parking.application.handler.impl.BillImpl;
+import com.an.parking.domain.bill.BillDto;
+import com.an.parking.infrasctructure.adapters.impl.BillServiceImpl;
+import com.an.parking.infrasctructure.mapper.IMapperBill;
+import com.an.parking.infrasctructure.adapter.entity.bill.BillEntity;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 

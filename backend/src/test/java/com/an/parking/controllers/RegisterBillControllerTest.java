@@ -1,7 +1,7 @@
 package com.an.parking.controllers;
 
 import com.an.parking.application.handler.IBillDelegate;
-import com.an.parking.dto.bill.BillDto;
+import com.an.parking.domain.bill.BillDto;
 import com.an.parking.infrasctructure.controllers.RegisterBill;
 import org.junit.Before;
 
@@ -16,7 +16,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -49,7 +48,7 @@ public class RegisterBillControllerTest {
 
     @Test
     public void TestOk() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/bill/list").contentType(MediaType.APPLICATION_JSON)).andExpect(MockMvcResultMatchers.status().is(HttpStatus.OK.value()));
+        mockMvc.perform(MockMvcRequestBuilders.get("/Bill/list").contentType(MediaType.APPLICATION_JSON)).andExpect(MockMvcResultMatchers.status().is(HttpStatus.OK.value()));
         //MvcResult result = mockMvc.perform(MockMvcRequestBuilders.get("/bill/list").contentType(MediaType.APPLICATION_JSON)).andReturn();
         //Assertions.assertEquals(HttpStatus.OK.value(),result.getResponse().getStatus());
     }

@@ -7,12 +7,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material';
 import { VehiclelistComponent } from './pages/vehiclelist/vehiclelist.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    VehiclelistComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +20,7 @@ import { VehiclelistComponent } from './pages/vehiclelist/vehiclelist.component'
     BrowserAnimationsModule,
     HttpClientModule,
     MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

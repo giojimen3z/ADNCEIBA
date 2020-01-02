@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {VehiclelistComponent} from "./vehiclelist.component";
 
 
+
 const routes: Routes = [{path: '', component: VehiclelistComponent}];
 
 @NgModule({
