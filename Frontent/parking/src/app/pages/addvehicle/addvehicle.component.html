@@ -15,8 +15,8 @@
           <p style="font-weight: bold">Seleccione el tipo de vehiculo</p>
           <select class="custom-select" style="max-width: 120px;"   [formControl]="selectOption" (change)="vehicleType()">
             <option selected=""></option>
-            <option value="Moto">Moto</option>
-            <option value="Auto">Automovil</option>
+            <option value="1">Moto</option>
+            <option value="2">Automovil</option>
           </select>
 
         </div>
@@ -40,7 +40,7 @@
             <option value="1000">1000</option>
           </select>
         </div>
-        <input type="submit" value="Guardar Vehiculo" class="btn btn-info btn-block btn-save">
+        <input type="submit" value="Guardar Vehiculo" class="btn btn-info btn-block btn-save" (click)="saveVehicle()">
       </div>
 
     </div>

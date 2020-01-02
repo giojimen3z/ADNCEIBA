@@ -7,9 +7,9 @@ import lombok.Setter;
 @Getter
 public class Type {
 
-    private long typeId;
+    private Long typeId;
     private String typeDesc;
-    private long typePriceHour;
-    private long typePriceDay;
-    private long typeExtraPay;
+    private Long typePriceHour;
+    private Long typePriceDay;
+    private Long typeExtraPay;
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {formatDate} from "@angular/common";
+import {Router} from "@angular/router";
+import {Vehicle} from "../../model/vehicle";
+import {AddVehiclesService} from "./../../services/add-vehicles.service"
 
 @Component({
   selector: 'app-addvehicle',
@@ -11,9 +14,11 @@ export class AddvehicleComponent implements OnInit {
 
   selectOption = new FormControl('');
 
+  vehicle: Vehicle;
+
   today= new Date();
   jstoday = '';
-  constructor() {
+  constructor( private router:Router, private service: AddVehiclesService) {
 
     this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '-05');
 
@@ -23,7 +28,7 @@ export class AddvehicleComponent implements OnInit {
   public vehicleType(){
 
 
-    if (this.selectOption.value == 'Moto'){
+    if (this.selectOption.value == 1){
 
       return true;
     }else {
@@ -36,4 +41,14 @@ export class AddvehicleComponent implements OnInit {
   ngOnInit() {
   }
 
+  saveVehicle(){
+
+    this.vehicle.typeId = this.selectOption.value;
+
+
+    this.service.addVehicle(this.vehicle).subscribe(data=>{
+      alert("El vehiculo se agrego crorrectamente");
+      this.router.navigate([["vehicles"]]);
+    })
+  }
 }

@@ -31,7 +31,7 @@ public class TypeRepositoryImpl implements ITypeRepository {
     }
 
     @Override
-    public Type queryById(long id) {
+    public Type queryById(Long id) {
         return TypeMapper.entityToDomain(repository.findById(id).orElseThrow(() -> new TypeNotFoundException(TYPE_NOT_FOUND)));
     }
 }

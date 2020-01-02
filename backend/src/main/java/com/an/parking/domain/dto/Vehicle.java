@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class Vehicle {
 
-    private long vehicleId;
-    private long typeId;
-    private long ccVehicle;
+    private Long vehicleId;
+    private Long typeId;
+    private Long ccVehicle;
     private String plateVehicle;
 
 

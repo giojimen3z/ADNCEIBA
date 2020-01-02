@@ -2,6 +2,8 @@ package com.an.parking.domain.repository;
 
 import com.an.parking.domain.dto.Vehicle;
 
+import java.util.List;
+
 public interface IVehicleRepository {
 
     Vehicle saveVehicle(Vehicle vehicle);
@@ -9,5 +11,8 @@ public interface IVehicleRepository {
     Vehicle queryVehicleByPlate(String plate);
 
     Vehicle queryById(Long id);
+
+    List<Vehicle> findAllVehicles();
+
 
 }

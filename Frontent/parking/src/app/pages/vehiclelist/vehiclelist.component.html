@@ -12,16 +12,15 @@
                   <tr>
                       <th>ID</th>
                       <th>Placa</th>
-                      <th> Seccion</th>
-                      <th>Lugar</th>
+                      <th> Cilindraje</th>
+
                   </tr>
               </thead>
               <tbody>
               <tr *ngFor="let vehicle of vehicles" class="text-center">
-                  <td>{{vehicle.id}}</td>
-                  <td>{{vehicle.plate}}</td>
-                  <td>{{vehicle.section}}</td>
-                  <td>{{vehicle.site}}</td>
+                  <td>{{vehicle.vehicleId}}</td>
+                  <td>{{vehicle.plateVehicle}}</td>
+                  <td>{{vehicle.ccVehicle}}</td>
                   <td> <button class="btn btn-danger">Salir</button></td>
               </tr>
               </tbody>

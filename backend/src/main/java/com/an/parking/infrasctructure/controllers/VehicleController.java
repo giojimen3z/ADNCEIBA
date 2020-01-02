@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/vehicle")
 public class VehicleController {
@@ -18,10 +20,16 @@ public class VehicleController {
     }
 
     @PostMapping
-    public ResponseEntity<Vehicle> guardarVehiculo(@RequestBody Vehicle vehicle) {
+    public ResponseEntity<Vehicle> saveVehicle(@RequestBody Vehicle vehicle) {
         vehicleService.saveVehicle(vehicle);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @GetMapping("/listvehicles")
+    public List<Vehicle> getAll(){
+
+        return vehicleService.getAll();
+    };
 
     @GetMapping("/{plate}")
     public ResponseEntity<Vehicle> get(@PathVariable("plate") String plate) {

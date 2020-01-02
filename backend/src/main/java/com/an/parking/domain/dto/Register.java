@@ -57,8 +57,8 @@ public class Register {
     }
     //Se valida la capacidad del estacionamiento
     public boolean parkingCapacity(long parkingCapacity, long typeId) {
-        boolean isFull = ((typeId == VEHICLE_TYPE_CAR ? MAX_CAPACITY_MOTO
-                : VEHICLE_TYPE_MOTO) <= parkingCapacity);
+        boolean isFull = ((typeId == VEHICLE_TYPE_CAR ? MAX_CAPACITY_CARS
+                : MAX_CAPACITY_MOTO) <= parkingCapacity);
         if (isFull)
             throw new ParkingNotFoundException(ERROR_PARKING_FULL);
         return isFull;

@@ -8,7 +8,7 @@ public interface IParkingRepository {
 
     Parking exitRegister(Parking parking);
 
-    long parkingSites(long typeId, long parkingTotal);
+    long parkingSites(Long typeId, Long parkingTotal);
 
     void parkedVehicle (String vehiclePlate);
 

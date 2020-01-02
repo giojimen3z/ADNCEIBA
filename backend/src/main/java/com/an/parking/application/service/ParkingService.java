@@ -6,7 +6,6 @@ import com.an.parking.domain.dto.Type;
 import com.an.parking.domain.dto.Vehicle;
 import com.an.parking.domain.repository.IParkingRepository;
 import com.an.parking.domain.repository.ITypeRepository;
-import com.an.parking.domain.repository.IUserRepository;
 import com.an.parking.domain.repository.IVehicleRepository;
 import org.springframework.stereotype.Service;
 

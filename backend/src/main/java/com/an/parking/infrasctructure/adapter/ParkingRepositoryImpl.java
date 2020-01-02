@@ -31,7 +31,7 @@ public class ParkingRepositoryImpl implements IParkingRepository {
     }
 
     @Override
-    public long parkingSites(long typeId, long parkingTotal) {
+    public long parkingSites(Long typeId, Long parkingTotal) {
         return repository.countByVehicleIdTypeIdAndParkingTotal(typeId,parkingTotal);
     }
 

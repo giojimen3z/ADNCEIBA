@@ -6,6 +6,6 @@ public interface ITypeRepository {
 
     Type saveType(Type type);
 
-    Type queryById(long id);
+    Type queryById(Long id);
 
 }

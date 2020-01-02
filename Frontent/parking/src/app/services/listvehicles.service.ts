@@ -9,12 +9,12 @@ export class ListvehiclesService {
 
 
   constructor(private http:HttpClient) { }
-/*  Url ='http://localhost:8081/parking/vehicle/list';
+  Url ='/api/vehicle/listvehicles';
 
   getVehicles(){
 
      return this.http.get<Vehicle[]>(this.Url);
 
-  }*/
+  }
 
 }

@@ -16,15 +16,15 @@ public class VehicleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long vehicleId;
+    private Long vehicleId;
 
     @ManyToOne
     @JoinColumn(name = "type_id", nullable = false)
     private TypeEntity  typeId;
 
     @Column(name = "cc_vehicle", nullable = true)
+    private Long ccVehicle;
 
-    private long ccVehicle;
     @Column(name = "plate_vehicle", nullable = true)
     private String plateVehicle;
 
