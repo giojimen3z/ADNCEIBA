@@ -1,0 +1,87 @@
+.container-plate{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data-info{
+    width: 15%;
+    margin: 10px 25px;
+    border-radius: 10px;
+}
+
+.data-info > div.card-header{
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.btn-data-info{
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+#factura{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#factura > div:first-child{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+
+#factura > div:last-child{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+#factura > div:last-child > div{
+    width: 50%;
+    height: 40%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+}
+
+#factura > div:last-child > div > div:first-child{
+    width: 50%;
+    height: 100%;
+    background: url('./../../../assets/billetes.png');
+    background-size: cover;
+}
+
+.content-factura{
+    width: 50%;
+    height: 100%;
+}
+
+.content-factura > div:first-child{
+    width: 100%;
+    height: 80%;
+}
+
+.content-factura > div:last-child{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-factura > div:last-child > button{
+    margin: 5px;
+    height: 70%;
+}
