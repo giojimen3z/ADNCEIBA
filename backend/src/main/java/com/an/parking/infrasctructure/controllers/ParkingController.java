@@ -19,12 +19,12 @@ public class ParkingController {
     }
 
     @PostMapping("/addvehicle")
-    public ResponseEntity<Parking> ingresarVehiculoEstacionamiento(@RequestBody Vehicle vehicle) {
+    public ResponseEntity<Parking> addVehicleParking(@RequestBody Vehicle vehicle) {
         return new ResponseEntity<>(parkingService.addmisionRegister(vehicle), HttpStatus.CREATED);
     }
 
     @PatchMapping("/exit/{plate}")
-    public ResponseEntity<Bill> extraerVehiculoEstacionamiento(@PathVariable("plate") String plate) {
+    public ResponseEntity<Bill> removeVehicleParking(@PathVariable("plate") String plate) {
         return new ResponseEntity<>(parkingService.exitRegister(plate), HttpStatus.CREATED);
     }
 

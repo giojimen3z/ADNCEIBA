@@ -1,6 +1,6 @@
 export class Vehicle {
   vehicleId:number;
-  typeId:FormControl;
+  typeId:number;
   ccVehicle:number;
   plateVehicle:String;
 

@@ -30,5 +30,5 @@ public class ParkingEntity {
     private Date parkingExitDate;
 
     @Column(name = "parking_total", nullable = true)
-    private Long parkingTotal;
+    private long parkingTotal;
 }

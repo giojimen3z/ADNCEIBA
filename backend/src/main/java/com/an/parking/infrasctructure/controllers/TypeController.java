@@ -20,7 +20,7 @@ public class TypeController {
     }
 
     @PostMapping
-    public ResponseEntity<Type> guardarTipo(@RequestBody Type type) {
+    public ResponseEntity<Type> saveType(@RequestBody Type type) {
         typeService.saveType(type);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
