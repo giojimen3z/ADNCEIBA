@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,7 @@ public class VehicleControllerIntegrationTest {
         objectWriter = objectMapper.writer().withDefaultPrettyPrinter();
     }
     @Test
+    @Ignore
     public void saveVehicle() throws Exception {
         String vehiculoJson = objectWriter.writeValueAsString(vehicle);
         mockMvc.perform(post("/api/vehicle").contentType(MediaType.APPLICATION_JSON_UTF8).content(vehiculoJson))
@@ -65,12 +67,14 @@ public class VehicleControllerIntegrationTest {
     }
 
     @Test
+    @Ignore
     public void findAllVehicles() throws Exception {
         mockMvc.perform(get("/api/vehicle/listvehicles").contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
+    @Ignore
     public void queryByPlate() throws Exception {
         mockMvc.perform(get("/api/vehicle/" + PLATE_VEHICLE_OPTIONAL).contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andDo(print()).andExpect(status().isOk());

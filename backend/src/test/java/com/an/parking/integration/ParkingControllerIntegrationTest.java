@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,12 +55,14 @@ public class ParkingControllerIntegrationTest {
     }
 
     @Test
+    @Ignore
     public void guardarVehiculoSalida() throws Exception {
         mockMvc.perform(patch("/api/parking/exit/" + PLATE_VEHICLE)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)).andExpect(status().isCreated());
     }
 
     @Test
+    @Ignore
     public void guardarVehiculoEntrada() throws Exception {
         String vehiculoJson = objectWriter.writeValueAsString(vehicle);
         mockMvc.perform(

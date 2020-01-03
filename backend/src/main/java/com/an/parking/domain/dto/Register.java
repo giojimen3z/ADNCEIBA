@@ -28,17 +28,21 @@ public class Register {
     public Parking registerValidation (Vehicle vehicle, Calendar admissionDate) {
         Parking parking;
 
-        if (!(Objects.equals(vehicle.getTypeId(), VEHICLE_TYPE_CAR) || Objects.equals(vehicle.getTypeId(), VEHICLE_TYPE_MOTO))) {
+        if (Objects.equals(vehicle.getTypeId(), VEHICLE_TYPE_CAR) || Objects.equals(vehicle.getTypeId(), VEHICLE_TYPE_MOTO)) {
+            if (vehicleEntry(vehicle, admissionDate) || !plateValue(vehicle.getPlateVehicle())) {
+                parking = new Parking();
+                parking.setVehicleId(vehicle.getVehicleId());
+                parking.setParkingEnterDate(admissionDate.getTime());
+                parking.setParkingTotal(0);
+                return parking;
+            }else{
+                throw new ParkingNotFoundException(ERROR_DENIED_ACCES);
+            }
+        }else{
             throw new TypeNotFoundException(VEHICLE_NOT_FOUND);
         }
-        if (vehicleEntry(vehicle, admissionDate) || !plateValue(vehicle.getPlateVehicle())) {
-            parking = new Parking();
-            parking.setVehicleId(vehicle.getVehicleId());
-            parking.setParkingEnterDate(admissionDate.getTime());
-            parking.setParkingTotal(0);
-            return parking;
-        }
-        throw new ParkingNotFoundException(ERROR_DENIED_ACCES);
+
+
     }
         //se  evalua la entrada del   vehiculo
     public boolean vehicleEntry(Vehicle vehicle, Calendar admissionDate) {

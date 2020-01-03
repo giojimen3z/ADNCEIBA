@@ -9,11 +9,11 @@
       <div>
         <p class="titles">Placa Vehiculo</p>
         <div class="labels">
-          <input type="text" name="plate" id="plate" class="form-control input-sm" placeholder="ingrese la placa">
+          <input type="text" name="plate" id="plate" class="form-control input-sm" [formControl]="plate" placeholder="ingrese la placa">
         </div>
         <div class="labels" style="display: inline-block">
           <p style="font-weight: bold">Seleccione el tipo de vehiculo</p>
-          <select class="custom-select" style="max-width: 120px;"   [formControl]="selectOption" (change)="vehicleType()">
+          <select class="custom-select" style="max-width: 120px;"   [formControl]="typeId" (change)="vehicleType()">
             <option selected=""></option>
             <option value="1">Moto</option>
             <option value="2">Automovil</option>
@@ -26,7 +26,7 @@
         </div>
         <div class="labels"  *ngIf="vehicleType()">
           <p class="panel-title">Seleccione Cilindrage de la moto</p>
-          <select class="custom-select" style="max-width: 120px;">
+          <select class="custom-select" style="max-width: 120px;" [formControl]="cc">
             <option selected=""></option>
             <option value="100">100</option>
             <option value="200">200</option>

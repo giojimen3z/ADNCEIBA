@@ -16,5 +16,11 @@ export class ListvehiclesService {
      return this.http.get<Vehicle[]>(this.Url);
 
   }
+  getBill(plate: String){
+    return this.http.patch('/api/parking/exit/'+ plate, null);
+  }
+
+
+
 
 }

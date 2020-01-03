@@ -1,5 +1,5 @@
 export class Vehicle {
-  vehicleId:number;
+  // vehicleId:number;
   typeId:number;
   ccVehicle:number;
   plateVehicle:String;

@@ -11,6 +11,7 @@ import {Vehicle} from "../../model/vehicle";
 export class VehiclelistComponent implements OnInit {
 
   vehicles: Vehicle[];
+
   constructor (private service: ListvehiclesService , private router:Router ) { }
 
   ngOnInit() {
@@ -19,6 +20,12 @@ export class VehiclelistComponent implements OnInit {
   }
 
   openFactura(plate){
+
+    this.service.getBill(plate).subscribe( data => {
+      //LLENAR UN ARRAY CON LOS DATOS OBTENIDOS Y MOSTRARLOS EN EL CODIGO DE LA FACTURA
+      console.log(data);
+    });
+
     document.getElementById('factura').style.display = 'block';
     console.log(plate)
   }

@@ -14,8 +14,8 @@ import static org.junit.Assert.assertNotNull;
 public class ParkingTest {
     private static final Long PARKING_ID = 1L;
     private static final Long VEHICLE_ID = 1L;
-    private static final String PARKING_ENTER_DATE = "14/12/2019 07:00";
-    private static final String PARKING_EXIT_DATE = "15/12/2019 11:00";
+    private static final String PARKING_ENTER_DATE = "14/12/2019 07:00:00";
+    private static final String PARKING_EXIT_DATE = "15/12/2019 11:00:00";
     private static final long PARKING_TOTAL = 600;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy hh:mm:ss");

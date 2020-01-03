@@ -12,8 +12,9 @@ import {AddVehiclesService} from "./../../services/add-vehicles.service"
 })
 export class AddvehicleComponent implements OnInit {
 
-  selectOption = new FormControl('');
-
+  typeId = new FormControl('');
+  plate = new FormControl('');
+  cc = new FormControl('');
   vehicle: Vehicle;
 
   today= new Date();
@@ -28,7 +29,7 @@ export class AddvehicleComponent implements OnInit {
   public vehicleType(){
 
 
-    if (this.selectOption.value == 1){
+    if (this.typeId.value == 1){
 
       return true;
     }else {
@@ -43,12 +44,17 @@ export class AddvehicleComponent implements OnInit {
 
   saveVehicle(){
 
-    this.vehicle.typeId = this.selectOption.value;
+    const data = {
+      // vehicleId: 7,
+      typeId: this.typeId.value,
+      ccVehicle: this.cc.value,
+      plateVehicle: this.plate.value
+    }
 
-
-    this.service.addVehicle(this.vehicle).subscribe(data=>{
+    this.service.addVehicle(data).subscribe(data=>{
       alert("El vehiculo se agrego crorrectamente");
       this.router.navigate([["vehicles"]]);
     })
+
   }
 }
