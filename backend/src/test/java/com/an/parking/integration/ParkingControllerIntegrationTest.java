@@ -32,7 +32,7 @@ import java.text.ParseException;
 @AutoConfigureMockMvc
 public class ParkingControllerIntegrationTest {
 
-    private static final String PLATE_VEHICLE = "ASD15A";
+    private static final String PLATE_VEHICLE = "RQR45A";
 
     @Autowired
     private WebApplicationContext context;
@@ -55,7 +55,6 @@ public class ParkingControllerIntegrationTest {
     }
 
     @Test
-    @Ignore
     public void guardarVehiculoSalida() throws Exception {
         mockMvc.perform(patch("/api/parking/exit/" + PLATE_VEHICLE)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)).andExpect(status().isCreated());
