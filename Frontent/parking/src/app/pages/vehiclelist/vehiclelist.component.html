@@ -27,7 +27,14 @@
     <div>
       <div></div>
       <div class="content-factura">
-        <div>jkhkj</div>
+        <div>
+          
+            <label >Factura Vehiculo {{bill.Vehicle.plateVehicle}}</label> 
+            <label> Fecha Ingreso   {{bill.Parking.parkingEnterDate | date: 'medium'}} </label>
+            <label> Fecha Salida   {{bill.Parking.parkingExitDate | date: 'medium'}} </label>
+            <label> Total a Pagar   ${{bill.Parking.parkingTotal}} PESOS M/CTE</label>
+            
+        </div>
         <div>
           <button type="button" class="btn btn-outline-dark" (click)="closeFactura()">Cerrar</button>
           <button type="button" class="btn btn-outline-dark">Pagar</button>
