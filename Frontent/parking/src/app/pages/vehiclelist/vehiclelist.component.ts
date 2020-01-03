@@ -18,4 +18,13 @@ export class VehiclelistComponent implements OnInit {
     this.service.getVehicles().subscribe(data => {this.vehicles=data});
   }
 
+  openFactura(plate){
+    document.getElementById('factura').style.display = 'block';
+    console.log(plate)
+  }
+
+  closeFactura(){
+    document.getElementById('factura').style.display = 'none';
+  }
+
 }

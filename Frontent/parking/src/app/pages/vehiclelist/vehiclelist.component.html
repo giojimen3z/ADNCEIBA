@@ -1,33 +1,38 @@
 <div class="container">
-
-  <div class="card">
-      <div class="card-header">
-
-        <h3> Lista Vehiculos </h3>
-
-      </div>
-      <div class="card-body">
-        <table>
-              <thead  >
-                  <tr>
-                      <th>ID</th>
-                      <th>Placa</th>
-                      <th> Cilindraje</th>
-
-                  </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let vehicle of vehicles" class="text-center">
-                  <td>{{vehicle.vehicleId}}</td>
-                  <td>{{vehicle.plateVehicle}}</td>
-                  <td>{{vehicle.ccVehicle}}</td>
-                  <td> <button class="btn btn-danger">Salir</button></td>
-              </tr>
-              </tbody>
-        </table>
-      </div>
-  </div>
-
+  <div class="card" >
+    <div class="card-header text-center"><h3> Lista Vehiculos </h3></div>     
+      <div class="card-body container-plate">
+        <!-- REGISTROS -->
+        <div class="card data-info" *ngFor="let vehicle of vehicles">
+          <div class="card-header text-center"><strong>{{vehicle.plateVehicle}}</strong></div>
+            <tbody>
+              <div class="text-center">
+                <strong>Cilindraje: </strong><em>{{vehicle.ccVehicle}}</em>
+              </div>
+              <div class="btn-data-info">
+                <button type="button" class="btn btn-outline-dark" (click)="openFactura(vehicle.plateVehicle)">Facturar</button>
+              </div>            
+            </tbody>
+         </div>
+        </div>
+    </div>
 </div>
 
 
+<!-- FACTURA -->
+<div id="factura">
+  <div>    
+  </div>
+  <div>
+    <div>
+      <div></div>
+      <div class="content-factura">
+        <div></div>
+        <div>
+          <button type="button" class="btn btn-outline-dark" (click)="closeFactura()">Cerrar</button>
+          <button type="button" class="btn btn-outline-dark">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
