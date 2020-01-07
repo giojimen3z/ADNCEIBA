@@ -40,7 +40,7 @@ pipeline {
             steps {
                 echo "------------>Unit Tests<------------"
                 dir("backend"){
-                    sh 'gradle test jacocoTestReport'
+                    sh 'gradle --b ./build.gradle clean test jacocoTestReport'
                 }
             }
         }  
