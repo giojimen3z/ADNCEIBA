@@ -13,9 +13,9 @@
         </div>
         <div class="labels" style="display: inline-block">
           <p style="font-weight: bold">Seleccione el tipo de vehiculo</p>
-          <select class="custom-select" style="max-width: 120px;"   [formControl]="typeId" (change)="vehicleType()">
+          <select class="custom-select" style="max-width: 120px;" id="typeid"  [formControl]="typeId" (change)="vehicleType()">
             <option selected=""></option>
-            <option value="1">Moto</option>
+            <option id="moto" value="1">Moto</option>
             <option value="2">Automovil</option>
           </select>
 
@@ -26,7 +26,7 @@
         </div>
         <div class="labels"  *ngIf="vehicleType()">
           <p class="panel-title">Seleccione Cilindrage de la moto</p>
-          <select class="custom-select" style="max-width: 120px;" [formControl]="cc">
+          <select class="custom-select" id="cc"  style="max-width: 120px;" [formControl]="cc">
             <option selected=""></option>
             <option value="100">100</option>
             <option value="200">200</option>
@@ -40,7 +40,7 @@
             <option value="1000">1000</option>
           </select>
         </div>
-        <input type="submit" value="Guardar Vehiculo" class="btn btn-info btn-block btn-save" (click)="saveVehicle()">
+        <input type="submit" id="saveVehicle" value="Guardar Vehiculo" class="btn btn-info btn-block btn-save" (click)="saveVehicle()">
       </div>
 
     </div>

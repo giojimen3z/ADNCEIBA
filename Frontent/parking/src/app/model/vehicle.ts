@@ -3,4 +3,6 @@ export class Vehicle {
   typeId:number;
   ccVehicle:number;
   plateVehicle:String;
+
 }
+

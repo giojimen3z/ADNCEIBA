@@ -27,17 +27,17 @@
     <div>
       <div></div>
       <div class="content-factura">
-        <div>
+        <div class="text-center">
           
-            <label >Factura Vehiculo {{bill.Vehicle.plateVehicle}}</label> 
-            <label> Fecha Ingreso   {{bill.Parking.parkingEnterDate | date: 'medium'}} </label>
-            <label> Fecha Salida   {{bill.Parking.parkingExitDate | date: 'medium'}} </label>
-            <label> Total a Pagar   ${{bill.Parking.parkingTotal}} PESOS M/CTE</label>
+            <strong>Factura Vehiculo</strong><em> {{bill.Vehicle.plateVehicle}}</em> <br>
+            <strong> Fecha Ingreso</strong><br><em>{{bill.Parking.parkingEnterDate | date: 'medium'}} </em><br>
+            <strong> Fecha Salida</strong><br><em>{{bill.Parking.parkingExitDate | date: 'medium'}} </em><br>
+            <strong> Total a Pagar</strong><br><em>${{bill.Parking.parkingTotal}} PESOS M/CTE</em><br>
             
         </div>
         <div>
           <button type="button" class="btn btn-outline-dark" (click)="closeFactura()">Cerrar</button>
-          <button type="button" class="btn btn-outline-dark">Pagar</button>
+          <button type="button" class="btn btn-outline-dark" (click)= "pagar()">Pagar</button>
         </div>
       </div>
     </div>

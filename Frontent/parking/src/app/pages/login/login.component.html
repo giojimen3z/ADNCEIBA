@@ -24,22 +24,14 @@
 <div class="full-page">
   <mat-card class="login-card">
       <mat-card-title>
-          Login to App
+          Parking App
       </mat-card-title>
       <mat-card-content>
-          <mat-form-field class="login-field">
-              <input matInput placeholder="Usuario" name="Usuario" [(ngModel)]="Usuario" type="text"/>
-          </mat-form-field>
-          <span id="user" class="error"></span>
-          <mat-form-field class="login-field">
-              <input matInput placeholder="Contraseña" name="password" [(ngModel)]="password" type="password"/>
-          </mat-form-field>
-          <span id="password" class="error"></span>
+        <h2>Bienvenido</h2>
       </mat-card-content>
       <mat-card-actions>
-          <button class="btn btn-outline-dark" (click)="login(Usuario, password)" type="submit">Inicio de sesión</button >
-            <div class="divider"></div>
-            <em [routerLink]="['register']">Registro</em>
+          <button class="btn btn-outline-dark" (click)="login()" type="submit">Inicio de sesión</button >
+            
       </mat-card-actions>
   </mat-card>
 </div>

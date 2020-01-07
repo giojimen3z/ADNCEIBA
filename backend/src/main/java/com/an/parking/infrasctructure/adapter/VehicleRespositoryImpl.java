@@ -2,8 +2,11 @@ package com.an.parking.infrasctructure.adapter;
 
 import com.an.parking.domain.dto.Vehicle;
 import com.an.parking.domain.exceptions.VehicleNotFoundException;
+import com.an.parking.domain.repository.IParkingRepository;
 import com.an.parking.domain.repository.IVehicleRepository;
+import com.an.parking.infrasctructure.adapter.jpa.IParkingRepositoryJpa;
 import com.an.parking.infrasctructure.adapter.jpa.IVehicleRepositoryJpa;
+import com.an.parking.infrasctructure.entity.ParkingEntity;
 import com.an.parking.infrasctructure.entity.VehicleEntity;
 import com.an.parking.infrasctructure.mapper.VehicleMapper;
 import org.slf4j.Logger;
@@ -27,9 +30,11 @@ public class VehicleRespositoryImpl implements IVehicleRepository {
 
 
     private final IVehicleRepositoryJpa repository;
+    private final IParkingRepositoryJpa parkingRepository;
 
-    public VehicleRespositoryImpl(IVehicleRepositoryJpa repository) {
+    public VehicleRespositoryImpl(IVehicleRepositoryJpa repository, IParkingRepositoryJpa parkingRepository) {
         this.repository = repository;
+        this.parkingRepository = parkingRepository;
     }
 
 
@@ -48,8 +53,8 @@ public class VehicleRespositoryImpl implements IVehicleRepository {
     @Override
     public List<Vehicle> findAllVehicles() {
         List<Vehicle> vehicles = new ArrayList<>();
-        List<VehicleEntity> entityList = repository.findAll();
-        entityList.forEach(value -> vehicles.add(VehicleMapper.entityToDomain(value)));
+        List<ParkingEntity> entityList = parkingRepository.findByVehicleIdIsNotNullAndParkingEnterDateIsNotNullAndParkingExitDateIsNull();
+        entityList.forEach(value -> vehicles.add(VehicleMapper.entityToDomain(value.getVehicleId())));
         return vehicles;
     }
 
@@ -62,4 +67,10 @@ public class VehicleRespositoryImpl implements IVehicleRepository {
             throw new VehicleNotFoundException(VEHICLE_NOT_FOUND);
         }
     }
+
+/*    @Override
+    public Vehicle deleteVehicle(String plate) {
+        return VehicleMapper.entityToDomain(this.repository.deleteVehicle(plate)
+                .orElseThrow(() -> new VehicleNotFoundException(VEHICLE_NOT_FOUND)));
+    }*/
 }

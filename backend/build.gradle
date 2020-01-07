@@ -9,7 +9,8 @@ plugins {
 group = 'com.an.parking'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
-
+apply plugin: 'java'
+apply plugin: 'jacoco'
 configurations {
     compileOnly {
         extendsFrom annotationProcessor

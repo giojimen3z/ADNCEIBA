@@ -21,6 +21,8 @@ export class ListvehiclesService {
   }
 
 
-
+  deleteVehicle(plate: String){
+    return this.http.patch('/api/parking/delete/'+ plate, null);
+  }
 
 }

@@ -35,5 +35,10 @@ public class VehicleController {
     public ResponseEntity<Vehicle> get(@PathVariable("plate") String plate) {
         return new ResponseEntity<>(vehicleService.queryVehicleByPlate(plate), HttpStatus.OK);
     }
+/*
+    @DeleteMapping("/delete/{plate}")
+    public  ResponseEntity<Vehicle> delete(@PathVariable("plate") String plate){
 
+        return  new ResponseEntity<>(vehicleService.deleteVehicle(plate),HttpStatus.OK);
+    }*/
 }

@@ -26,7 +26,7 @@ export class VehiclelistComponent implements OnInit {
   openFactura(plate){
 
     this.service.getBill(plate).subscribe( data => {
-      //LLENAR UN ARRAY CON LOS DATOS OBTENIDOS Y MOSTRARLOS EN EL CODIGO DE LA FACTURA
+  
       this.createdBill(data)
       
     });
@@ -56,4 +56,9 @@ export class VehiclelistComponent implements OnInit {
     document.getElementById('factura').style.display = 'none';
   }
 
+  pagar(plate){
+      this.service.deleteVehicle(plate).subscribe(data=>{
+        alert("EL vehiculo salio correctamente")
+      })
+  }
 }
