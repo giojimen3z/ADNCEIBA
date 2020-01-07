@@ -27,7 +27,6 @@ export class ListvehiclesService {
     }
 
     
-    debugger;
     return this.http.delete('/api/vehicle/delete/'+ plate, options);
   }
 

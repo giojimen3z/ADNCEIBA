@@ -60,9 +60,9 @@ export class VehiclelistComponent implements OnInit {
     var plate =  this.bill.Vehicle.plateVehicle;
 
     console.log(plate);
-    
+
     this.service.deleteVehicle(plate).subscribe(data=>{
-        alert("EL vehiculo salio correctamente" +data)
+        alert("EL vehiculo salio correctamente")
       })
 
       this.router.navigate(["menu"]);
