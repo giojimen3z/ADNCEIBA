@@ -22,7 +22,13 @@ export class ListvehiclesService {
 
 
   deleteVehicle(plate: String){
-    return this.http.patch('/api/parking/delete/'+ plate, null);
+    var options = {
+      
+    }
+
+    
+    debugger;
+    return this.http.delete('/api/vehicle/delete/'+ plate, options);
   }
 
 }

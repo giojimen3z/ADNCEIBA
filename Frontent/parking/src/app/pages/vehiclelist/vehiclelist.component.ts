@@ -56,9 +56,17 @@ export class VehiclelistComponent implements OnInit {
     document.getElementById('factura').style.display = 'none';
   }
 
-  pagar(plate){
-      this.service.deleteVehicle(plate).subscribe(data=>{
-        alert("EL vehiculo salio correctamente")
+  pagar(){
+    var plate =  this.bill.Vehicle.plateVehicle;
+
+    console.log(plate);
+    
+    this.service.deleteVehicle(plate).subscribe(data=>{
+        alert("EL vehiculo salio correctamente" +data)
       })
+
+      this.router.navigate(["menu"]);
+
+
   }
 }

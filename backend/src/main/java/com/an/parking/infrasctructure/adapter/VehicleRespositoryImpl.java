@@ -68,9 +68,9 @@ public class VehicleRespositoryImpl implements IVehicleRepository {
         }
     }
 
-/*    @Override
-    public Vehicle deleteVehicle(String plate) {
-        return VehicleMapper.entityToDomain(this.repository.deleteVehicle(plate)
-                .orElseThrow(() -> new VehicleNotFoundException(VEHICLE_NOT_FOUND)));
-    }*/
+    @Override
+    public void deleteVehicle(String plate) {
+        this.parkingRepository.delete(this.parkingRepository.findByVehicleIdPlateVehicle(plate).get());
+        this.repository.delete(this.repository.findByPlateVehicle(plate).get());
+    }
 }

@@ -34,11 +34,11 @@ public class VehicleService {
         return  iVehicleRepository.findAllVehicles();
     }
 
-/*
-    public Vehicle deleteVehicle (String plate){
 
-        return iVehicleRepository.deleteVehicle(plate);
-    }*/
+    public void deleteVehicle (String plate){
+
+         iVehicleRepository.deleteVehicle(plate);
+    }
 
     public Vehicle queryVehicleByPlate(String plate) {
         return iVehicleRepository.queryVehicleByPlate(plate);

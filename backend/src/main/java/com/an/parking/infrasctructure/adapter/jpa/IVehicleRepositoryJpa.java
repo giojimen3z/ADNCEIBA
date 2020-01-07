@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface IVehicleRepositoryJpa extends JpaRepository<VehicleEntity, Long> {
     Optional<VehicleEntity> findByPlateVehicle (String plate);
-    //Optional<VehicleEntity> deleteVehicle (String plate);
 
 
 }

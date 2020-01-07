@@ -21,10 +21,12 @@ describe('agregar vehiculo', function() {
         button.click();
         
 
-        var timeoutInMilliseconds = 1000;
+        var timeoutInMilliseconds = 10000;
         browser.wait(protractor.ExpectedConditions.alertIsPresent(), timeoutInMilliseconds);
+        
         var alertDialog = browser.switchTo().alert();
         expect(alertDialog.getText()).toEqual("El vehiculo se agrego crorrectamente");
+        alertDialog.accept();
 
     })
 

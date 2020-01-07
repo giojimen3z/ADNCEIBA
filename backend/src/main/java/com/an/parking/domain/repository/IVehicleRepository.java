@@ -12,7 +12,7 @@ public interface IVehicleRepository {
 
     Vehicle queryById(Long id);
 
-    //Vehicle deleteVehicle(String plate);
+    void deleteVehicle(String plate);
 
     List<Vehicle> findAllVehicles();
 
